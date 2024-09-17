@@ -14,8 +14,55 @@ int stackArray[MAXSIZE]; // the stack array of size MAXSIZE
 int top = -1; // defining the top pointer to keep track of stack overflow/underflow, 
                         //(not actually a pointer variable)
 
-int main(int argc, char* argv[]){   // main function
-    
+int main(int argc, char* argv[])
+{   // main function
+    printf("Stack\n");
+
+    while(1)
+    {
+        printf("\n1: Push \t2: Pop \t3: Display \t4: Peek \t5:Exit");// menu driven function for user interaction
+        int choiceA = scan("Enter your choice");
+
+        switch(choiceA)
+        {
+            case 1:
+                int element = scna("\nEnter the element\n");
+                int x = Push(element);
+                if(x == 1)
+                {
+                    printf("\nSomething went wrong while inserting the element\n");
+                }
+                break;
+            
+            case 2:
+                int x = pop();
+                if(x == 1)
+                {
+                    printf("\nSomething went wrong while deleting\n");
+                }
+                break;
+            
+            case 3:
+                int x = display();
+                if(x == 1)
+                {
+                    printf("\nSomething went wrong while displaying\n");
+                }
+                break;
+            
+            case 4:
+                peek();
+                break;
+            
+            case 5:
+                printf("\nExiting . . . . .  done \n");
+                return 0;
+            
+            default:
+                printf("\nInvalid choice\n");
+                break;
+        }   
+    }
     return 0;
 }
 
@@ -44,9 +91,7 @@ int push(int item){
     {
         printf("\nThe Stack is Full\n");
         return 0;
-    }
-    else
-    {
+    } else {
         stackArray[++top] = item; // inserting the item  at array index of top after incrementing it
         printf("Inserted: %d", item);
         return 0;
@@ -63,9 +108,9 @@ int display(){
     }
     else
     {
-        for(int i = top; i > -1; i--)
+        for(int i = top; i >= 0; i--)
         {
-            printf("%d : %d \n", i , stackArray[i]);
+            printf("%d : %d \n", (top - i + 1), stackArray[i]);
         }
         return 0;
     }
@@ -88,4 +133,16 @@ int scan(char* s)
     }
    
     return -1;
+}
+
+void peek()
+{
+    if(top != -1)
+    {
+        printf("%d: %d",top, stackArray[top]);
+    }
+    else
+    {
+        printf("Stack is empty top = %d", top);
+    }
 }
