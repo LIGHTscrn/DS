@@ -46,7 +46,7 @@ void linearsearch(int arr[], int n, int key)// function to implement linearsearc
 
 void Recursive_linearsearch(int arr[], int n, int key)//function to implement linearsearch
 {
-    Recursive_linearsearch_helper(arr, n, key, 0);
+    Recursive_linearsearch_helper(arr, n, key, 0); // call the helper function
 }
 void Recursive_linearsearch_helper(int arr[], int n, int key, int i)
 {
