@@ -26,7 +26,7 @@ int main() {
     while(1)
     {
         printf("\n1: Push \t2: Pop \t3: Display \t4: Peek \t5:Exit\n");// menu driven function for user interaction
-        int choiceA = scan("\nEnter your choice");
+        int choiceA = scan("\nEnter your choice: ");
 
         switch(choiceA)
         {
