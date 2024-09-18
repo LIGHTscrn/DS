@@ -2,9 +2,9 @@
 
 typedef struct tuple
 {
-    int row;
-    int col;
-    int value;
+    char* row;
+    char* col;
+    char* value;
 }tuple;
 
 int main(void)
@@ -27,19 +27,40 @@ int main(void)
         {
             printf("Matrix[i][j]: ");
             scanf("%d", &matrix[i][j]);
-            if(matrix[i][j] == 0)
+            if(matrix[i][j] != 0)
             {
                 count++;
             }
         }
     }  
+    // number of 0s should be greater than half the total number of elements in the matrix for it to be sparse
 
-    if( count <= (rows * cols)/2 )
+    if( count >= (rows * cols)/2 )
     {
         printf("The given matrix is not a sparse matrix\n ");
         return 0;
     }
 
     //since the matrix is a sparse matrix the following code will execute  
+    tuple sparsematrix[count + 1];
 
+    sparsematrix[0].row = "rows";
+    sparsematrix[0].col = "cols";
+    sparsematrix[0].value = "Value";
+
+    int k = 1;
+
+    for(int i = 0; i < rows; i++)
+    {
+        for(int j = 0; j < cols; j++)
+        {
+            if(matrix[i][j] != 0)
+            {
+                sparsematrix[k].row = i;
+                sparsematrix[k].col = j;
+                sparsematrix[k].value = matrix[i][j];
+                k++;
+            }
+        }
+    }
 }
