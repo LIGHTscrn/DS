@@ -2,9 +2,9 @@
 
 typedef struct tuple
 {
-    char* row;
-    char* col;
-    char* value;
+    int row;
+    int col;
+    int value;
 }tuple;
 
 int main(void)
@@ -25,7 +25,7 @@ int main(void)
     {
         for(int j = 0; j < cols; j++)
         {
-            printf("Matrix[i][j]: ");
+            printf("Matrix[%d][%d]: ", i , j);
             scanf("%d", &matrix[i][j]);
             if(matrix[i][j] != 0)
             {
@@ -44,9 +44,9 @@ int main(void)
     //since the matrix is a sparse matrix the following code will execute  
     tuple sparsematrix[count + 1];
 
-    sparsematrix[0].row = "rows";
-    sparsematrix[0].col = "cols";
-    sparsematrix[0].value = "Value";
+    sparsematrix[0].row = rows;
+    sparsematrix[0].col = cols;
+    sparsematrix[0].value = count;
 
     int k = 1;
 
