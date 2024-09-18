@@ -93,3 +93,24 @@ void pop(){
     top = top->next;
     free(temp);
 }
+
+void display(){
+    node* temp = top;
+    while(temp != NULL)
+    {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+void peek()
+{
+    node* temp = top;
+    int count=0;
+    while(temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    printf("The top element is %d\n", top->data);
+    printf("The number of elements in the stack is %d\n", count);
+}
