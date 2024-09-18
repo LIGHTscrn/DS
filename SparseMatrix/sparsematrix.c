@@ -63,4 +63,13 @@ int main(void)
             }
         }
     }
+
+    printf("The tuple representation of the sparse matrix is: \n");
+
+    for(int i = 0 ; i < k; i++)
+    {
+        printf("%d %d %d\n", sparsematrix[i].row, sparsematrix[i].col, sparsematrix[i].value);
+    }
+
+    return 0;
 }
