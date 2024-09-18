@@ -25,5 +25,11 @@ int main(void)
                 count++;
             }
         }
-    }    
+    }  
+
+    if( count <= (rows * cols)/2 )
+    {
+        printf("The given matrix is not a sparse matrix\n ");
+        return;
+    }  
 }
