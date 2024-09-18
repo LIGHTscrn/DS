@@ -37,11 +37,7 @@ int main() {
             
             case 3:
                 {
-                    int x = display();
-                    if(x == 1)
-                    {
-                        printf("\nStack underflow\n");
-                    }
+                    display();
                 }
                 break;
             
@@ -113,4 +109,15 @@ void peek()
     }
     printf("The top element is %d\n", top->data);
     printf("The number of elements in the stack is %d\n", count);
+}
+
+int scan(char* s)
+{
+    char buffer[100];
+    printf("%s",s);
+
+    if(fgets(buffer, sizeof(buffer),stdin) != NULL)
+    {
+        return atoi(buffer);
+    }
 }
