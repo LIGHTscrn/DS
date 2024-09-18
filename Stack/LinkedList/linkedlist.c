@@ -8,6 +8,14 @@ typedef struct node{
 
 node* top = NULL;
 
+//function prototypes
+
+int scan(char*);
+void push(int);
+void pop();
+void display();
+void peek();
+
 int main() {
 
     // copy paste from stack.c
@@ -91,6 +99,12 @@ void pop(){
 }
 
 void display(){
+    if(top == NULL)
+    {
+        printf("Stack is empty\n");
+        return;
+    }
+    
     node* temp = top;
     while(temp != NULL)
     {
