@@ -31,11 +31,7 @@ int main() {
             
             case 2:
                 {
-                    int x = pop();
-                    if(x == 1)
-                    {
-                        printf("\nStack Underflow\n");
-                    }
+                    pop();
                 }
                 break;
             
@@ -84,4 +80,16 @@ void push( int x ){
     newnode->data = x;
     newnode->next = top;
     top = newnode;
+}
+
+void pop(){
+    if(top == NULL)
+    {
+        printf("Stack is empty\n");
+        return;
+    }
+
+    node* temp = top;
+    top = top->next;
+    free(temp);
 }
