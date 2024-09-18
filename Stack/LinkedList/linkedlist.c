@@ -32,7 +32,7 @@ int main() {
         {
             case 1:
                 {
-                    int element = scan("\nEnter the element");
+                    int element = scan("\nEnter the element: ");
                     push(element);
                 }
                 break;
@@ -89,7 +89,7 @@ void push( int x ){
 void pop(){
     if(top == NULL)
     {
-        printf("Stack is empty\n");
+        printf("\nStack is empty\n");
         return;
     }
 
@@ -101,7 +101,7 @@ void pop(){
 void display(){
     if(top == NULL)
     {
-        printf("Stack is empty\n");
+        printf("\nStack is empty\n");
         return;
     }
 
@@ -116,10 +116,10 @@ void peek()
 {
     if(top == NULL)
     {
-        printf("Stack is empty\n");
+        printf("\nStack is empty\n");
         return;
     }
-    
+
     node* temp = top;
     int count=0;
     while(temp != NULL)
@@ -127,7 +127,7 @@ void peek()
         count++;
         temp = temp->next;
     }
-    printf("The top element is %d\n", top->data);
+    printf("\nThe top element is %d\n", top->data);
     printf("The number of elements in the stack is %d\n", count);
 }
 
