@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+typedef struct tuple
+{
+    int row;
+    int col;
+    int value;
+}tuple;
+
 int main(void)
 {
     int rows , cols, count = 0;
@@ -30,6 +37,9 @@ int main(void)
     if( count <= (rows * cols)/2 )
     {
         printf("The given matrix is not a sparse matrix\n ");
-        return;
-    }  
+        return 0;
+    }
+
+    //since the matrix is a sparse matrix the following code will execute  
+
 }
