@@ -6,7 +6,7 @@ typedef struct node{
     struct node* next;
 }node;
 
-node* HEAD = NULL;
+node* top = NULL;
 
 int main() {
 
@@ -23,17 +23,9 @@ int main() {
         switch(choiceA)
         {
             case 1:
-            
                 {
                     int element = scan("\nEnter the element");
-                    
-                    int x = push(element);
-                    
-                    if(x == 1)
-                    {
-                    
-                        printf("\nStack Overflow\n");
-                    }
+                    push(element);
                 }
                 break;
             
@@ -80,8 +72,16 @@ int main() {
     // pasted till here ^
 }
 
-int push( int x ){
+void push( int x ){
 
     node* newnode = (node*)malloc(sizeof(node));
+    if(!newnode)
+    {
+        printf("Memory allocation failed\n");
+        return;
+    }
 
+    newnode->data = x;
+    newnode->next = top;
+    top = newnode;
 }
