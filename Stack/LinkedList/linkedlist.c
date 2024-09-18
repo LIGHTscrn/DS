@@ -104,7 +104,7 @@ void display(){
         printf("Stack is empty\n");
         return;
     }
-    
+
     node* temp = top;
     while(temp != NULL)
     {
@@ -114,6 +114,12 @@ void display(){
 }
 void peek()
 {
+    if(top == NULL)
+    {
+        printf("Stack is empty\n");
+        return;
+    }
+    
     node* temp = top;
     int count=0;
     while(temp != NULL)
