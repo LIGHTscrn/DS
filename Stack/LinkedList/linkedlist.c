@@ -78,3 +78,9 @@ int main() {
     return 0;
     // pasted till here ^
 }
+
+int push( int x ){
+
+    node* newnode = (node*)malloc(sizeof(node));
+
+}
