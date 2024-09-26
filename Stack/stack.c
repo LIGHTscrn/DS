@@ -2,11 +2,11 @@
 #include <stdlib.h> //required for implementing the scan function
 
 int pop();         // function prototypes
-int push(int
+int push(int item);
 int display();
 void peek();
                     //quality of life features
-int scan(char*);-5
+int scan(char*);
 
 #define MAXSIZE 10
 int stackArray[MAXSIZE]; // the stack array of size MAXSIZE
@@ -122,7 +122,7 @@ int display(){
     else
     {
         printf("Stack Contents\n");
-        for(int i = 0; i <= top; i++)
+        for(int i = top; i > -1; i--)
         {
             printf("%d : %d \n", i + 1, stackArray[i]);
         }
@@ -148,7 +148,7 @@ void peek()
 {
     if(top != -1)
     {
-        printf("%d: %d",top, stackArray[top]);
+        printf("%d\n", stackArray[top]);
     }
     else
     {
