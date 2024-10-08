@@ -30,3 +30,14 @@ int main(int argc , char * argv[])
          }
    return 0;
 }
+
+void insertAtBeginning(int data){
+    Node *newnode = (Node *)malloc(sizeof(Node));
+    if(newnode == NULL){
+        printf("Memory not allocated\n");
+        return;
+    }
+    newnode -> data = data;
+    newnode -> next = head;
+    head = newnode;
+}
