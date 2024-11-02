@@ -26,7 +26,10 @@ void Insert(int data){
     }
 
     node* current = root;
+    node* parent = NULL;
+
     while(current){
+        parent = current;
         if(data <= (current->data)){
             current = (current -> left);
         }
@@ -34,5 +37,12 @@ void Insert(int data){
             current = (current -> right);
         }
     }
-    newnode = current;
+    if(data <= (parent -> data)){
+        parent -> left = newnode;
+    }
+    else{
+        parent -> right = newnode;
+    }
+
+    
 }
