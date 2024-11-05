@@ -11,6 +11,7 @@ void delete(int data);
 void inorder(node* root);
 void preorder(node* root);
 void postorder(node* root);
+void search(int data);
 node* root = NULL;
 
 int main(void){
@@ -174,4 +175,26 @@ void postorder(node* root){
     postorder(root -> left);
     postorder(root -> right);
     printf("%d ", root -> data);
+}
+
+void search(int data){
+    node* current = root;
+    if(root == NULL){
+        printf("Tree is empty");
+        return;
+    }
+    while(current && current -> data != data){
+        if(data < current -> data){
+            current = current -> left;
+        }
+        else{
+            current = current -> right;
+        }
+    }
+    if(current == NULL){
+        printf("Element not found");
+    }
+    else{
+        printf("Element found");
+    }
 }
